@@ -7,7 +7,7 @@ role :web, domain
 role :app, domain
 role :db, domain, :primary => true
 
-set :repository,  "--username remco http://svn.rubyenrais.nl/amsterdam-rb"
+set :repository,  "--username remco http://svn.rubyenrails.nl/amsterdam-rb"
 set :rails_env, "production"
 
 set :mongrel_user, 'amsterdam-rb'
