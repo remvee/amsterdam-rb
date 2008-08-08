@@ -1,0 +1,9 @@
+--- 
+user: amsterdam-rb
+cwd: /u/apps/amsterdam-rb/current
+port: "3050"
+environment: production
+group: deploy
+address: 127.0.0.1
+pid_file: log/mongrel.pid
+servers: 3
