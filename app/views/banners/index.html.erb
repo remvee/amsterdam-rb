@@ -18,7 +18,7 @@
 	  <%=h banner.owner %>
 	</td>
 	<td>
-	  <%=h image_path(banner.image) %>
+	  <%= image_tag image_path(banner.image) %>
 	</td>
 	<td>
 	  <%=h banner.start_at.to_s(:short) %>
