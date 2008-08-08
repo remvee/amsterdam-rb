@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Amsterdam.rb</title>
+    <style type="text/css">
+      #banners { float: right; }
+    </style>
+  </head>
+  <body>
+    <h1>Amsterdam.rb</h1>
+
+    <div id="banners">
+      <% Banner.current.each do |banner| %>
+	<% div_for banner do %>
+	  <%= link_to image_tag(image_path(banner.image)), banner.link %>
+	<% end %>
+      <% end %>
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
