@@ -12,7 +12,7 @@
     <div id="banners">
       <% Banner.current.each do |banner| %>
 	<% div_for banner do %>
-	  <%= link_to image_tag(image_path(banner.image)), banner.link %>
+	  <%= link_to show_image_tag(banner.image), banner.link %>
 	<% end %>
       <% end %>
     </div>
