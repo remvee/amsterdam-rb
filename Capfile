@@ -27,4 +27,9 @@ namespace :deploy do
     deploy.mongrel.stop
     invoke_command "rm -rf #{shared_path}/*/mongrel.*.pid"
   end
+
+  task :after_symlink, :roles => :app do
+    sudo "chown -R #{mongrel_user} #{current_path}/public"
+  end
 end
+
