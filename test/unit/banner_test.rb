@@ -29,6 +29,21 @@ class BannerTest < ActiveSupport::TestCase
     end
   end
 
+  def test_current_scope
+    (banners(:one).start_at + 1.hour).warp do
+      assert Banner.current.include?(banners(:one)), 'expected inclusion of banner one'
+    end
+    (banners(:one).end_at - 1.hour).warp do
+      assert Banner.current.include?(banners(:one)), 'expected inclusion of banner one'
+    end
+    (banners(:one).start_at - 1.hour).warp do
+      assert !Banner.current.include?(banners(:one)), 'unexpected inclusion of banner one'
+    end
+    (banners(:one).end_at + 1.hour).warp do
+      assert !Banner.current.include?(banners(:one)), 'unexpected inclusion of banner one'
+    end
+  end
+
 private
   def mock_image_file
     mock(:content_type => 'image/gif', :read => 'image-data')
