@@ -23,6 +23,12 @@ class BannerTest < ActiveSupport::TestCase
     end
   end
 
+  def test_destroy_should_also_destroy_image
+    assert_difference 'Image.count', -1 do
+      banners(:one).destroy
+    end
+  end
+
 private
   def mock_image_file
     mock(:original_filename => 'banner.gif',

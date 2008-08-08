@@ -1,5 +1,5 @@
 class Banner < ActiveRecord::Base
-  belongs_to :image
+  belongs_to :image, :dependent => :destroy
 
   validates_presence_of :owner, :start_at, :end_at, :image
   validates_associated :image
