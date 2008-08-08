@@ -5,8 +5,9 @@ class Banner < ActiveRecord::Base
     {:order => 'start_at', :conditions => ['start_at <= :now AND end_at >= :now', {:now => Time.now}]}
   }
 
-  validates_presence_of :owner, :start_at, :end_at, :image
+  validates_presence_of :owner, :link, :start_at, :end_at, :image
   validates_associated :image
+  validates_format_of :link, :with => %r{^https?://}
 
   def image_file=(file_field)
     return if file_field.blank?

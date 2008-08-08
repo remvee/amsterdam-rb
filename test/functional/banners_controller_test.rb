@@ -16,7 +16,7 @@ class BannersControllerTest < ActionController::TestCase
 
   def test_create_should_create_new_banner
     assert_difference 'Banner.count + Image.count', 2 do
-      post :create, :banner => {:owner => 'test', :start_at => Time.now, :end_at => 1.week.from_now, :image_file => fixture_file_upload('banner-test.gif', 'image/gif')}
+      post :create, :banner => {:owner => 'test', :link => 'http://test.net/', :start_at => Time.now, :end_at => 1.week.from_now, :image_file => fixture_file_upload('banner-test.gif', 'image/gif')}
       assert_response :redirect
     end
   end

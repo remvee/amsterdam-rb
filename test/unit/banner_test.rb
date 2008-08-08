@@ -10,7 +10,7 @@ class BannerTest < ActiveSupport::TestCase
 
   def test_create_with_image_file
     assert_difference('Image.count') do
-      assert Banner.create(:owner => 'test', :start_at => Time.now, :end_at => 1.week.from_now, :image_file => mock_image_file)
+      assert Banner.create(:owner => 'test', :link => 'http://test.net', :start_at => Time.now, :end_at => 1.week.from_now, :image_file => mock_image_file)
     end
   end
 
