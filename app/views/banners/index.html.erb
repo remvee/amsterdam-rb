@@ -1,0 +1,40 @@
+<div class="actions">
+  <%= link_to 'new', new_banner_path %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Image</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banners.each do |banner| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+	<td>
+	  <%=h banner.owner %>
+	</td>
+	<td>
+	  <%=h image_path(banner.image) %>
+	</td>
+	<td>
+	  <%=h banner.start_at.to_s(:short) %>
+	</td>
+	<td>
+	  <%=h banner.end_at.to_s(:short) %>
+	</td>
+	<td class="actions">
+	  <%= link_to 'edit', edit_banner_path(banner) %>
+	  <%= button_to 'destroy', banner, :method => :delete, :confirm => 'Sure?' %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="paginate">
+  <%= will_paginate @banners %>
+</div>

@@ -31,8 +31,6 @@ class BannerTest < ActiveSupport::TestCase
 
 private
   def mock_image_file
-    mock(:original_filename => 'banner.gif',
-         :content_type => 'image/gif',
-         :read => 'image-data')
+    mock(:content_type => 'image/gif', :read => 'image-data')
   end
 end

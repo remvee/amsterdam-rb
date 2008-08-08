@@ -1,0 +1,9 @@
+<%= f.text_field :owner %>
+<%= f.datetime_select :start_at %>
+<%= f.datetime_select :end_at %>
+<%= f.file_field :image_file %>
+<%= f.error_messages :image %>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
