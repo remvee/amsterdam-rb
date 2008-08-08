@@ -25,5 +25,6 @@ namespace :deploy do
   desc "Custom stop task for mongrel cluster"
   task :stop, :roles => :app do
     deploy.mongrel.stop
+    invoke_command "rm -rf #{shared_path}/*/mongrel.*.pid"
   end
 end
