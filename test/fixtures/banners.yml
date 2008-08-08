@@ -1,0 +1,13 @@
+one:
+  owner: bruce
+  link: http://bruce.test.net/
+  image: one
+  start_at: <%= 1.day.ago.to_s(:db) %>
+  end_at: <%= 2.weeks.from_now.to_s(:db) %>
+
+two:
+  owner: alice
+  link: http://bruce.test.net/
+  image: two
+  start_at: <%= 1.week.from_now.to_s(:db) %>
+  end_at: <%= 3.weeks.from_now.to_s(:db) %>
