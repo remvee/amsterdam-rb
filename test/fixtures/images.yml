@@ -1,0 +1,7 @@
+one:
+  content_type: image/gif
+  data: 'gif-data'
+
+two:
+  content_type: 'image/jpeg'
+  data: 'jpeg-data'
