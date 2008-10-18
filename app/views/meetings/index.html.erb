@@ -16,7 +16,7 @@
 	  <%=h meeting.start_at.to_s(:short) %>
 	</td>
 	<td>
-	  <%=h meeting.blurp %>
+	  <%= meeting.blurp %>
 	</td>
 	<td class="actions">
 	  <%= link_to 'edit', edit_meeting_path(meeting) %>

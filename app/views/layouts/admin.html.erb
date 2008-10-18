@@ -3,13 +3,52 @@
   <head>
     <title>Amsterdam.rb - <%=h controller.controller_name.humanize %></title>
     <style type="text/css">
-      label { display: block; }
+      body {
+        margin: auto;
+        max-width: 750px;
+        font-family: Helvetica, sans-serif;
+        line-height: 1.4;
+      }
+
+      label { display: block; margin: .5em 0 0 0; }
       .error_message { color: red; padding-left: 1em; }
+      .fieldWithErrors { display: inline; }
       tr.odd { background-color: #eee; }
+      form.button-to, form.button-to div { display: inline; }
+
+      #header {
+        border-bottom: solid black 2px;
+        padding: 1em;
+      }
+      #header ul.tabs { padding: 0; list-style: none; }
+      #header ul.tabs li { display: inline; margin: 0 2em 0 0; padding: 0 }
+
+      #content { padding: 1em; }
+
+      .actions { margin: .5em 0; padding: .25em; background-color: #cfc; }
+      table { width: 100%; border-collapse: collapse; }
+      table th, table td {
+        text-align: left;
+        border-left: solid black 1px;
+      }
+
+
+      input[type="text"], textarea { width: 100%; }
     </style>
   </head>
-  <body>
-    <h1>Amsterdam.rb - <%=h controller.controller_name.humanize %></h1>
-    <%= yield %>
+  <body class="<%= controller.controller_name %> <%= controller.action_name %>">
+    <div id="header">
+      <h1>Amsterdam.rb - <%=h controller.controller_name.humanize %></h1>
+
+      <ul class="tabs">
+        <li><%= link_to 'Front', root_path %></li>
+        <li><%= link_to 'Banners', banners_path %></li>
+        <li><%= link_to 'Meetings', meetings_path %></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
   </body>
 </html>
