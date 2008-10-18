@@ -2,6 +2,8 @@ class Meeting < ActiveRecord::Base
   default_value_for :start_at do
     Date.today.next_last_monday_of_the_month.to_time + 20.hours
   end
+  default_value_for :blurp, DEFAULT_BLURP
+  default_value_for :gmaps_url, DEFAULT_GMAPS_URL
 
   validate do |meeting|
     d = meeting.start_at.to_date

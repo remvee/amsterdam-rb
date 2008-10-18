@@ -18,13 +18,12 @@
   Next Meeting
 </h2>
 <p>
-  8pm on Monday <%= Date.today.next_last_monday_of_the_month.to_s(:long) %>
+  <%= @meeting.start_at.to_s(:long) %>
   @
-  <a href="http://www.debekeerdesuster.nl/">De bekeerde suster</a>
+  <%= @meeting.blurp %>
 </p>
 <p>
-  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;time=&amp;date=&amp;ttype=&amp;q=Kloveniersburgwal+6,+Amsterdam&amp;sll=37.0625,-95.677068&amp;sspn=40.817312,76.904297&amp;ie=UTF8&amp;z=14&amp;iwloc=addr&amp;om=0&amp;ll=52.378219,4.903593&amp;output=embed&amp;s=AARTsJomp73jyUYd_ds0InN1MEBW0AbMXA"></iframe><br />
-  <small><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;time=&amp;date=&amp;ttype=&amp;q=Kloveniersburgwal+6,+Amsterdam&amp;sll=37.0625,-95.677068&amp;sspn=40.817312,76.904297&amp;ie=UTF8&amp;z=14&amp;iwloc=addr&amp;om=0&amp;ll=52.378219,4.903593&amp;source=embed" astyle="color:#0000FF;text-align:left">View Larger Map</a></small>
+  <%= @meeting.gmaps_url %>
 </p>
 <h2>
   Join Our Community
