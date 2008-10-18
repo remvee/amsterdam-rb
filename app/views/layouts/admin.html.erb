@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Amsterdam.rb - Banners</title>
+    <title>Amsterdam.rb - <%=h controller.controller_name.humanize %></title>
     <style type="text/css">
       label { display: block; }
       .error_message { color: red; padding-left: 1em; }
@@ -9,6 +9,7 @@
     </style>
   </head>
   <body>
+    <h1>Amsterdam.rb - <%=h controller.controller_name.humanize %></h1>
     <%= yield %>
   </body>
 </html>

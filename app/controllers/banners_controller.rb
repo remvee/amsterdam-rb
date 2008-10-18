@@ -1,4 +1,5 @@
 class BannersController < ApplicationController
+  layout 'admin'
   before_filter :authenticate if RAILS_ENV == 'production'
 
   def index
@@ -26,13 +27,5 @@ class BannersController < ApplicationController
   def destroy
     Banner.destroy(params[:id])
     redirect_to :action => :index
-  end
-
-private
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      Digest::MD5.hexdigest("asd-rb-#{username}") == USERNAME_HASH &&
-        Digest::MD5.hexdigest("asd-rb-#{password}") == PASSWORD_HASH
-    end
   end
 end

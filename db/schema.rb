@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080808114900) do
+ActiveRecord::Schema.define(:version => 20081017215958) do
 
   create_table "banners", :force => true do |t|
     t.string   "owner"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20080808114900) do
   create_table "images", :force => true do |t|
     t.string   "content_type"
     t.binary   "data",         :limit => 2097152
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meetings", :force => true do |t|
+    t.datetime "start_at"
+    t.string   "blurp"
+    t.string   "gmaps_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

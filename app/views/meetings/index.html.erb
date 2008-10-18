@@ -1,0 +1,36 @@
+<div class="actions">
+  <%= link_to 'new', new_meeting_path %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start at</th>
+      <th>Blurp</th>
+      <th>gmaps_url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+	<td>
+	  <%=h meeting.start_at.to_s(:short) %>
+	</td>
+	<td>
+	  <%=h meeting.blurp %>
+	</td>
+	<td>
+	  <%= link_to 'iframe', meeting.gmaps_url %>
+	</td>
+	<td class="actions">
+	  <%= link_to 'edit', edit_meeting_path(meeting) %>
+	  <%= button_to 'destroy', meeting, :method => :delete, :confirm => 'Sure?' %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="paginate">
+  <%= will_paginate @meetings %>
+</div>
