@@ -14,13 +14,18 @@ class MeetingTest < ActiveSupport::TestCase
 
   def test_start_at_should_be_last_monday_of_month
     assert_no_difference 'Meeting.count' do
-      m = Meeting.new(:start_at => Date.new(2008, 10, 20))
-      m.save
-      assert_not_nil m.errors.on(:start_at)
+      m = Meeting.create(:start_at => Date.new(2008, 10, 20))
+      assert_equal 'should be last monday of month', m.errors.on(:start_at)
     end
   end
 
   def test_start_at_defaults_to_next_last_monday_of_month_at_20h
     assert_equal Date.today.next_last_monday_of_the_month.to_time + 20.hours, Meeting.new.start_at
+  end
+
+  def test_allow_only_one_meeting_a_day
+    Meeting.create!
+    m = Meeting.create
+    assert_equal 'meeting already planned for that day', m.errors.on(:start_at)
   end
 end
