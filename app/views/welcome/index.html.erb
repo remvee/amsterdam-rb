@@ -1,6 +1,4 @@
-<h2>
-  Amsterdam's Ruby User Group
-</h2>
+<h2>Amsterdam's Ruby User Group</h2>
 <p>
   We are the Amsterdam Ruby User Group. We exist to promote all aspects of Ruby
   within the area of Amsterdam.
@@ -14,20 +12,20 @@
   welcome newcomers to join our friendly local community to share, teach and
   generate new Ruby knowledge.
 </p>
-<h2>
-  Next Meeting
-</h2>
+
+<h2>Next Meeting</h2>
 <p>
   <%= @meeting.start_at.to_s(:long) %>
   @
   <%= @meeting.blurp %>
 </p>
-<p>
-  <%= @meeting.gmaps_url %>
-</p>
-<h2>
-  Join Our Community
-</h2>
+<% if @meeting.gmap %>
+  <p>
+    <%= @meeting.gmap %>
+  </p>
+<% end %>
+
+<h2>Join Our Community</h2>
 <p>
   Subscribe to our
   <a href="http://groups.google.com/group/amsterdam-rb">mailing list</a>

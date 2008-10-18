@@ -20,7 +20,7 @@ class MeetingsControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference 'Meeting.count' do
-      post :create, :meeting => {:start_at => Date.today.next_last_monday_of_the_month, :blurp => 'test', :gmaps_url => 'http://example.com'}
+      post :create, :meeting => {:start_at => Date.today.next_last_monday_of_the_month, :blurp => 'test'}
       assert_response :redirect
     end
   end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081017215958) do
+ActiveRecord::Schema.define(:version => 20081018130526) do
 
   create_table "banners", :force => true do |t|
     t.string   "owner"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(:version => 20081017215958) do
   create_table "meetings", :force => true do |t|
     t.datetime "start_at"
     t.string   "blurp"
-    t.string   "gmaps_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "gmap"
   end
 
 end
