@@ -3,30 +3,30 @@
   <head>
     <title>Amsterdam.rb</title>
     <style type="text/css">
-      body {
+      #content {
         margin: auto;
-        max-width: 750px;
+        max-width: 670px;
         font-family: Helvetica, sans-serif;
         line-height: 1.4;
       }
-      img {
-        border: none;
-      }
+      img { border: none; }
       #banners { float: right; }
     </style>
   </head>
   <body>
-    <h1>Amsterdam.rb</h1>
-
-    <div id="banners">
-      <% Banner.current.each do |banner| %>
-	<% div_for banner do %>
-	  <%= link_to show_image_tag(banner.image), banner.link %>
-	<% end %>
-      <% end %>
-    </div>
+    <% unless Banner.current.empty? %>
+      <div id="banners">
+        <% Banner.current.each do |banner| %>
+	  <% div_for banner do %>
+	    <%= link_to show_image_tag(banner.image), banner.link %>
+	  <% end %>
+        <% end %>
+      </div>
+    <% end %>
 
     <div id="content">
+      <h1>Amsterdam.rb</h1>
+
       <%= yield %>
     </div>
   </body>
