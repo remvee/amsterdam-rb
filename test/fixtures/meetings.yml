@@ -1,11 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  start_at: 2008-10-17 23:59:58
+  start_at: 2008-05-26 20:00:00
   blurp: MyString
   gmaps_url: MyString
 
 two:
-  start_at: 2008-10-17 23:59:58
+  start_at: 2008-06-30 20:00:00
   blurp: MyString
   gmaps_url: MyString
