@@ -1,39 +1,59 @@
-<h2>Amsterdam's Ruby User Group</h2>
-<p>
-  We are the Amsterdam Ruby User Group. We exist to promote all aspects of Ruby
-  within the area of Amsterdam.
-</p>
-<p>
-  Our aim is to make Amsterdam a centre of excellence for Ruby development.
-</p>
-<p>
-  We meet on the last Monday of every month, and welcome anybody with an
-  interest in the language Ruby, or even the framework Rails. We particularly
-  welcome newcomers to join our friendly local community to share, teach and
-  generate new Ruby knowledge.
-</p>
-
-<h2>Next Meeting</h2>
-<p>
-  <%= @meeting.start_at.to_s(:long) %>
-  @
-  <%= @meeting.blurp %>
-</p>
-<% unless @meeting.gmap.blank? %>
+<div class="intro">
+  <h2>Amsterdam's Ruby User Group</h2>
   <p>
-    <%= @meeting.gmap %>
+    We are the Amsterdam Ruby User Group. We exist to promote all
+    aspects of Ruby within the area of Amsterdam.
   </p>
-<% end %>
+  <p>
+    Our aim is to make Amsterdam a centre of excellence for Ruby
+    development.
+  </p>
+  <p>
+    We meet on the last Monday of every month, and welcome anybody
+    with an interest in the language Ruby, or even the framework
+    Rails. We particularly welcome newcomers to join our friendly
+    local community to share, teach and generate new Ruby knowledge.
+  </p>
+</div>
 
-<h2>Join Our Community</h2>
-<p>
-  Subscribe to our
-  <a href="http://groups.google.com/group/amsterdam-rb">mailing list</a>
-</p>
-<form action="http://groups.google.com/group/amsterdam-rb/boxsubscribe">
-  <div>
-    <input type="text" name="email" value="enter email address" /> <input type="submit" name="sub" value="Subscribe" />
-  </div>
-</form>
+<div class="meeting">
+  <h2>Next Meeting</h2>
+  <p>
+    <%= @meeting.start_at.to_s(:long) %>
+    @
+    <%= @meeting.blurp %>
+  </p>
+  <% unless @meeting.gmap.blank? %>
+    <p>
+      <%= @meeting.gmap %>
+    </p>
+  <% end %>
+</div>
+
+<div class="join">
+  <h2>Join Our Community!</h2>
+  <p>
+    Subscribe to our
+    <a href="http://groups.google.com/group/amsterdam-rb">mailing list</a>.
+  </p>
+  <form action="http://groups.google.com/group/amsterdam-rb/boxsubscribe">
+    <div>
+      <input type="text" name="email" value="enter email address" />
+      <input type="submit" name="sub" value="Subscribe" />
+    </div>
+  </form>
+</div>
+
+<div class="host">
+  <h2>Host Our Next Meeting?</h2>
+  <p>
+    Sponsor our community by hosting our next event.  In return you
+    can promote your company and your logo will be on the site for a
+    couple of months.  Please post a message to our
+    <a href="http://groups.google.com/group/amsterdam-rb">mailing
+    list</a> when your interested.  But remember: last monday of the
+    month, starting around eight in the evening.
+  </p>
+</div>
 
 <%= render :partial => 'flickr' %>
