@@ -44,6 +44,12 @@ class BannerTest < ActiveSupport::TestCase
     end
   end
 
+  def test_default_6_months
+    banner = Banner.new
+    delta = banner.end_at - banner.start_at
+    assert ((28 * 6).days..(31 * 6).days).include?(delta)
+  end
+
 private
   def mock_image_file
     mock(:content_type => 'image/gif', :read => 'image-data')
