@@ -1,25 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
   <head>
     <title>Amsterdam.rb</title>
-    <style type="text/css">
-      img { border: none; }
-      #content {
-        margin: 2em auto;
-        max-width: 670px;
-        font-family: Helvetica, sans-serif;
-        line-height: 1.4;
-        padding: 5px 15px;
-      }
-      #banners {
-        float: right;
-        padding: 10px;
-      }
-    </style>
+    <meta name="keywords" content="ruby, rails, programming, community, meetings, amsterdam">
+    <%= stylesheet_link_tag 'screen' %>
   </head>
   <body>
     <% unless Banner.current.empty? %>
       <div id="banners">
+        Our sponsors:
         <% Banner.current.each do |banner| %>
 	  <% div_for banner do %>
 	    <%= link_to show_image_tag(banner.image), banner.link %>
