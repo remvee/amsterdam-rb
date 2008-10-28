@@ -19,3 +19,6 @@ img {
 #banners .banner {
     margin-top: 1em;
 }
+#banners .banner img {
+    border: solid #888 1px;
+}
