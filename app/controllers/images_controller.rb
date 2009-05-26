@@ -1,5 +1,4 @@
 class ImagesController < ApplicationController
-  session :off
   caches_page :show
 
   def show
