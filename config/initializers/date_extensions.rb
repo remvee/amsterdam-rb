@@ -1,4 +1,4 @@
-require 'activesupport'
+require 'active_support'
 
 module DateExtensions
   def next_last_monday_of_the_month
