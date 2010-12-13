@@ -20,7 +20,7 @@ class MeetingTest < ActiveSupport::TestCase
   end
 
   def test_start_at_defaults_to_next_last_monday_of_month_at_20h
-    assert_equal Date.today.next_last_monday_of_the_month.to_time + 20.hours, Meeting.new.start_at
+    assert_equal Date.today.next_last_monday_of_the_month.to_time + DEFAULT_START_TIME, Meeting.new.start_at
   end
 
   def test_allow_only_one_meeting_a_day
